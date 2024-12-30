@@ -1,0 +1,99 @@
+/* Estilo de la sección del título */
+*{
+    font-family: "Arial", sans-serif;
+}
+.seccion-titulo {
+    text-align: left;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.seccion-titulo h1 {
+    margin: 0;
+    font-size: 1.7rem;
+    color: #444;
+}
+
+/* Contenedor de eventos */
+.contenedor-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); 
+    width: calc(100% - 10%);
+    gap: 20px;
+    margin: 40px auto;
+    margin-top: 5px;
+}
+
+/*background-color: white; /* Fondo claro y profesional 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave 
+    margin: 40px auto;
+    gap: 20px;
+    width: calc(100% - 10%);*/
+
+/* Estilos generales de las tarjetas */
+.tarjeta-evento {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-evento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-evento .encabezado {
+    padding: 15px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tarjeta-evento .contenido {
+    padding: 15px;
+}
+
+.tarjeta-evento p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.tarjeta-evento .descripcion {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Estilos por tipo de evento */
+.tipo-educativo .encabezado {
+    background-color: #6dbf69; /* Verde suave */
+}
+
+.tipo-deportivo .encabezado {
+    background-color: #5c9ded; /* Azul suave */
+}
+
+.tipo-cultural .encabezado {
+    background-color: #f9a825; /* Amarillo/Mostaza */
+}
+
+.tipo-civico .encabezado {
+    background-color: #e57373; /* Rojo suave */
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .contenedor-eventos {
+        grid-template-columns: 1fr;
+    }
+}
