@@ -14,6 +14,7 @@
             <?= session('error') ?>
         </div>
     <?php endif; ?>
+    
     <h3 class="titulo">Estudiantes Inscritos en el Periodo</h3>
     <div class="datosEstadisticos">
         <table>

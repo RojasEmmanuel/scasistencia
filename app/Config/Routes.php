@@ -15,5 +15,6 @@ $routes->get('proximos', 'Proximos::index');
 $routes->get('importar', 'Importar::index');
 $routes->post('importar/estudiantes', 'Importar::estudiantes');
 $routes->post('importar/docentes', 'Importar::docentes');
+$routes->post('principal/insertarEvento', 'Principal::insertarEvento');
 $routes->get('/', 'Login::index');
 $routes->post('login', 'Login::validar');

@@ -2,6 +2,25 @@
 <?= $this->section('content'); ?>
 
 <div class="contenidoPagina">
+    <?php if (session()->has('message')): ?>
+        <div class="alert alert-success">
+            <?= session('message') ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->has('error')): ?>
+        <div class="alert alert-danger">
+            <?= session('error') ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->has('errors')): ?>
+        <div class="alert alert-danger">
+            <?php foreach (session('errors') as $error): ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
     <div class="seccion-superior">
         <h1 class="saludo">Bienvenido al Panel de Administración 🚀</h1>
@@ -126,24 +145,24 @@
     <div class="modal">
         <button class="close-button" onclick="closeModal()">&times;</button>
         <h1>Registro de Eventos</h1>
-        <form action="/submit-event" method="POST">
+        <form action="<?= base_url('principal/insertarEvento') ?>" method="POST">
             <div class="contenedorForm">
                 <div class="form0">
                     <div class="form-group">
                         <label for="nombre">Nombre del evento</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre del evento" required>
+                        <input type="text" id="nombre" name="nombre" value="<?= old('nombre') ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="fecha">Fecha</label>
-                        <input type="date" id="fecha" name="fecha" required>
+                        <input type="date" id="fecha" name="fecha" value="<?= old('fecha') ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="hora">Hora</label>
-                        <input type="time" id="hora" name="hora" required>
+                        <input type="time" id="hora" name="hora" value="<?= old('hora') ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="lugar">Lugar</label>
-                        <input type="text" id="lugar" name="lugar" placeholder="Ingresa el lugar" required>
+                        <input type="text" id="lugar" name="lugar" value="<?= old('lugar') ?>" required>
                     </div>
                 </div>
 
