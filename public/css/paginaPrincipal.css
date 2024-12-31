@@ -491,3 +491,42 @@ transform: translateX(3px);
 .calendar-header{
     background-color: white;
 }
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+    width: 14.28%; /* 100% dividido por 7 días de la semana */
+    height: 100px; /* Altura fija para las celdas */
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.calendar td span {
+    display: block;
+}
+
+.calendar td .event {
+    display: block;
+    background-color: #78273E;
+    padding: 2px;
+    margin: 5px;
+    font-size: 17px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 20px;
+}
+
+.prev-month, .next-month {
+    color: #ccc;
+}
+
+.current-month {
+    color: #000;
+}

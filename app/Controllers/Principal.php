@@ -6,8 +6,17 @@ class Principal extends BaseController
 {
     public function index()
     {
+        $db = \Config\Database::connect();
+        $query = $db->query('SELECT * FROM evento WHERE fecha >= CURDATE() ORDER BY fecha ASC LIMIT 3');
+        $result = $query->getResult();
+
+        $consulta = $db->query('SELECT * FROM evento');
+        $r = $consulta->getResult();
+
         $data = [
-            'title' => 'Panel de Administración'
+            'title' => 'Panel de Administración',
+            'notificaciones'=> $result,
+            'eventos'=>$r
         ];
         
         return view('principal', $data);

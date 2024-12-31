@@ -43,66 +43,54 @@
             <div class="containerNotificaciones">
                 <h3 class="subtitulo">Eventos proximos</h2><br>
                 <div class="event-grid">
-                    <div class="card">
-                        <button class="show-event-button" onclick="openModal2()">🔔Conferencia de Innovación Tecnológica</button>
-                        <div class="card__conte">
-                            Desfile conmemorativo por la revolucioón mexicana
+                    <?php foreach($notificaciones as $notificacion): ?>
+                        <div class="card">
+                            <button class="show-event-button" onclick="openModal2(<?= htmlspecialchars(json_encode($notificacion), ENT_QUOTES, 'UTF-8') ?>)">🔔
+                                <?php 
+                                    $nombre = $notificacion->nombre;
+                                    if (strlen($nombre) > 60) {
+                                        $nombre = substr($nombre, 0, 60) . '...';
+                                    }
+                                    echo $nombre;
+                                ?></button>
+                            <div class="card__conte">
+                                <?php 
+                                    $descripcion = $notificacion->descripcion;
+                                    if (strlen($descripcion) > 60) {
+                                        $descripcion = substr($descripcion, 0, 60) . '...';
+                                    }
+                                    echo $descripcion;
+                                ?>
+                            </div>
+                            <div class="card__date">
+                            <?php 
+                                $fecha = DateTime::createFromFormat('Y-m-d', $notificacion->fecha);
+                                echo $fecha->format('d M. Y');
+                            ?>
+                            </div>
+                            
+                            <div class="card__arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+                                    <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+                                </svg>
+                            </div>
                         </div>
-                        <div class="card__date">
-                            20 nov. 2024
-                        </div>
-                        
-                        <div class="card__arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                                <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <button class="show-event-button" onclick="openModal2()">🔔Conferencia de Innovación Tecnológica</button>
-                        <div class="card__conte">
-                            Desfile conmemorativo por la revolucioón mexicana
-                        </div>
-                        <div class="card__date">
-                            20 nov. 2024
-                        </div>
-                        
-                        <div class="card__arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                                <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <button class="show-event-button" onclick="openModal2()">🔔Conferencia de Innovación Tecnológica</button>
-                        <div class="card__conte">
-                            Desfile conmemorativo por la revolucioón mexicana
-                        </div>
-                        <div class="card__date">
-                            20 nov. 2024
-                        </div>
-                        
-                        <div class="card__arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-                                <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303C13.7626 19.3232 14.2374 19.3232 14.5303 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-                            </svg>
-                        </div>
-                    </div>
+                    <?php endforeach; ?> 
                 </div>
             </div>
             <div class="modal-overlay2" id="modalOverlay2">
                 <div class="modal2">
                     <div class="modal-header2">
-                        <h1 style="color: white;">Conferencia de Innovación Tecnológica</h1>
+                        <h1 style="color: white;"><span id="modal2Title"></span></h1>
                     </div>
                     <div class="modal-body2">
-                        <p><strong>Fecha:</strong> 25 de marzo de 2024</p>
-                        <p><strong>Hora:</strong> 10:00 AM</p>
-                        <p><strong>Lugar:</strong> Auditorio Principal</p>
-                        <p><strong>Área:</strong> Ingeniería en Sistemas</p>
-                        <p><strong>Tipo de Evento:</strong> Académico</p>
-                        <p><strong>Responsable:</strong> Mtro. Juan Pérez López</p>
-                        <p class="description"><strong>Descripción:</strong> En este evento se abordarán las últimas tendencias en innovación tecnológica, incluyendo inteligencia artificial, desarrollo de software y tecnología en la nube. Ideal para estudiantes, académicos y profesionales interesados en el futuro de la tecnología.</p>
+                        <p><strong>Fecha:</strong> <span id="modal2Fecha"></span></p>
+                        <p><strong>Hora:</strong> <span id="modal2Hora"></span></p>
+                        <p><strong>Lugar:</strong> <span id="modal2Lugar"></span></p>
+                        <p><strong>Área:</strong> <span id="modal2Area"></span></p>
+                        <p><strong>Tipo:</strong> <span id="modal2Tipo"></span></p>
+                        <p><strong>Responsable:</strong> <span id="modal2Responsable"></span></p>
+                        <p><strong>Descripción:</strong> <span id="modal2Descripcion"></span></p>
                     </div>
                     <div class="modal-footer2">
                         <button onclick="closeModal2()">Cerrar</button>
@@ -275,13 +263,98 @@
         overlay.style.display = 'none';
     }
 
-    function openModal2() {
-        document.getElementById('modalOverlay2').style.display = 'flex';
+    function openModal2(evento) {
+        const overlay = document.getElementById('modalOverlay2');
+        document.getElementById('modal2Title').textContent = evento.nombre;
+        document.getElementById('modal2Fecha').textContent = evento.fecha;
+        document.getElementById('modal2Hora').textContent = evento.hora;
+        document.getElementById('modal2Lugar').textContent = evento.lugar;
+        document.getElementById('modal2Area').textContent = evento.area;
+        document.getElementById('modal2Tipo').textContent = evento.tipo;
+        document.getElementById('modal2Responsable').textContent = evento.responsable;
+        document.getElementById('modal2Descripcion').textContent = evento.descripcion;
+        overlay.style.display = 'flex';
     }
 
     function closeModal2() {
-        document.getElementById('modalOverlay2').style.display = 'none';
+        const overlay = document.getElementById('modalOverlay2');
+        overlay.style.display = 'none';
     }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const eventos = <?= json_encode($eventos) ?>;
+    const calendarBody = document.getElementById('calendarBody');
+    const monthYear = document.getElementById('monthYear');
+    const prevMonth = document.getElementById('prevMonth');
+    const nextMonth = document.getElementById('nextMonth');
+
+    let currentDate = new Date();
+
+    function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+        const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
+        const lastDayOfLastMonth = new Date(year, month, 0).getDate();
+
+        monthYear.textContent = currentDate.toLocaleDateString('es-ES', { month: 'long', year: 'numeric' });
+
+        calendarBody.innerHTML = '';
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement('tr');
+
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement('td');
+                const cellText = document.createElement('span');
+
+                if (i === 0 && j < firstDayOfMonth) {
+                    cellText.textContent = lastDayOfLastMonth - firstDayOfMonth + j + 1;
+                    cell.classList.add('prev-month');
+                } else if (date > lastDateOfMonth) {
+                    cellText.textContent = date - lastDateOfMonth;
+                    cell.classList.add('next-month');
+                    date++;
+                } else {
+                    cellText.textContent = date;
+                    cell.classList.add('current-month');
+
+                    const eventDate = new Date(year, month, date).toISOString().split('T')[0];
+                    eventos.forEach(evento => {
+                        if (evento.fecha === eventDate) {
+                            const eventSpan = document.createElement('span');
+                            eventSpan.textContent = evento.nombre;
+                            eventSpan.classList.add('event');
+                            cell.appendChild(eventSpan);
+                        }
+                    });
+
+                    date++;
+                }
+
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+
+            calendarBody.appendChild(row);
+        }
+    }
+
+    prevMonth.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+    });
+
+    nextMonth.addEventListener('click', function() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+    });
+
+    renderCalendar();
+});
 </script>
 
 <?= $this->endSection(); ?>
