@@ -15,8 +15,16 @@
         overflow: hidden;
         position: relative;
         font-family: "Roboto";
+        margin-top: 50px;
+        margin-bottom: 50px;
+        padding-top: 10px;
     }
 
+    .Enc{
+        font-size: 1.4em;
+        color: #333;
+        font-family: 'Roboto';
+    }
     .header2 {
         display: flex;
         justify-content: space-between;
@@ -27,12 +35,6 @@
         background: #ffffff;
         padding: 15px 0;
         z-index: 1;
-    }
-
-    .header2 h2 {
-        font-size: 1.7em;
-        color: #333;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .header2 button {
@@ -209,7 +211,7 @@
 <div class="centro2">
     <div class="container2">
         <div class="header2">
-            <h2>Lista de formatos en PDF</h2>
+            <h1 class="Enc">Lista de formatos en PDF</h1>
             <button onclick="openModal()">Agregar PDF</button>
         </div>
         <ul class="file-list" id="fileList">

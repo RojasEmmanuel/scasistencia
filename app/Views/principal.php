@@ -187,7 +187,7 @@
     </div>
 </div>
 <script>
-
+    closeModal();
     let today = new Date();
     let currentMonth = today.getMonth();
     let currentYear = today.getFullYear();

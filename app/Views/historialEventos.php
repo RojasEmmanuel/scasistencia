@@ -11,47 +11,46 @@
     <div class="event-gridUno">
        
         <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
+            <img src="Civico.png" width="150" height="80" alt="Imagen de fondo">
             <div class="fechaUno">24/10/2024</div>
             <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
         </div>
 
         <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
+            <img src="Deportivo.png" width="150" height="80" alt="Imagen de fondo">
             <div class="fechaUno">24/10/2024</div>
             <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
         </div>
 
         <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
+            <img src="Academico.png" width="150" height="80" alt="Imagen de fondo">
             <div class="fechaUno">24/10/2024</div>
             <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
         </div>
 
         <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
+            <img src="Cultural.png" width="150" height="80" alt="Imagen de fondo">
             <div class="fechaUno">24/10/2024</div>
             <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
         </div>
 
         <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
+            <img src="Civico.png" width="150" height="80" alt="Imagen de fondo">
             <div class="fechaUno">24/10/2024</div>
-            <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
+            <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>   
+        </div>      
+
+        <div class="cardUno">
+            <img src="Deportivo.png" width="150" height="80" alt="Imagen de fondo">
+            <div class="fechaUno">24/10/2024</div>
+            <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>   
         </div>
 
         <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
+            <img src="Academico.png" width="150" height="80" alt="Imagen de fondo">
             <div class="fechaUno">24/10/2024</div>
-            <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
+            <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>  
         </div>
-
-        <div class="cardUno">
-            <img src="https://via.placeholder.com/350x180" alt="Imagen de fondo">
-            <div class="fechaUno">24/10/2024</div>
-            <a href="<?= base_url('/detalles') ?>" class="titleUno">Nombre del Evento</a>
-        </div>
-        
         
         <!-- Puedes agregar más tarjetas de eventos aquí -->
     </div>

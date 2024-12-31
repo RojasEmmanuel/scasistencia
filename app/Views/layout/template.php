@@ -25,13 +25,13 @@
         </button>
         
         <!-- Logo -->
-        <img src="LogoTecnm.png" alt="Logo TecNM" class="nav-logo">
-        <img src="LogoITP.png" alt="Logo Instituto Tecnológico de Pochutla" class="nav-logo2">
+        <img src="<?= base_url('/LogoTecnm.png') ?>" alt="Logo TecNM" class="nav-logo">
+        <img src="<?= base_url('/LogoITP.png') ?>" alt="Logo Instituto Tecnológico de Pochutla" class="nav-logo2">
     </div>
 
     <!-- Texto y links de la barra -->
     <div class="nav-middle">
-        <a href="<?= base_url('/principal') ?>" class="nav-link">Página Principal</a>
+        <a href="<?= base_url('/principal') ?>" class="nav-link">Principal</a>
     </div>
 
     <div class="TEXTO-SAL">
@@ -41,7 +41,7 @@
     </div>
 
     <div class="nav-right">
-        <img src="user.png" alt="Imagen Esquina" class="img-corner">
+        <img src="<?= base_url('/user.png') ?>" alt="Imagen Esquina" class="img-corner">
     </div>
 </nav>
 
