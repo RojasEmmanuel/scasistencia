@@ -6,15 +6,30 @@
 
     <?php if (session()->has('message')): ?>
         <div class="alert alert-success">
+            <span class="icon">✔️</span>
             <?= session('message') ?>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">✖️</button>
         </div>
     <?php endif; ?>
 
     <?php if (session()->has('error')): ?>
         <div class="alert alert-danger">
+            <span class="icon">❌</span>
             <?= session('error') ?>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">✖️</button>
         </div>
     <?php endif; ?>
+
+    <?php if (session()->has('errors')): ?>
+        <div class="alert alert-danger">
+            <span class="icon">❌</span>
+            <?php foreach (session('errors') as $error): ?>
+                <p><?= $error ?></p>
+            <?php endforeach; ?>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">✖️</button>
+        </div>
+    <?php endif; ?>
+
 
     <h3 class="titulo">Docentes Registrados</h3>
     <h3 class="subtitulo" style="text-align: center;">Ordenar</h3> <br>

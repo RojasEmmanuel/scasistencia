@@ -125,3 +125,44 @@
 .dropdown-menu ul li:hover {
     background-color: #a6a6a68b; /* Color al pasar el mouse */
 }
+
+
+/*ESTILOS PARA LAS NOTIFICACIONES*/
+/* Estilo para alertas de éxito */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Iconos para alertas */
+.alert .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.alert .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+}

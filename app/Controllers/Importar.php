@@ -40,7 +40,7 @@ class Importar extends BaseController
                 }
                 fclose($handle);
 
-                return redirect()->to('/estudiantes')->with('mensaje', 'Datos importados correctamente. Los registros anteriores fueron eliminados.');
+                return redirect()->to('/estudiantes')->with('message', 'Datos importados correctamente. Los registros anteriores fueron eliminados.');
             }
         }
 
@@ -77,7 +77,7 @@ class Importar extends BaseController
                 }
                 fclose($handle);
 
-                return redirect()->to('/docentes')->with('mensaje', 'Datos importados correctamente. Los registros anteriores fueron eliminados.');
+                return redirect()->to('/docentes')->with('message', 'Datos importados correctamente. Los registros anteriores fueron eliminados.');
             }
         }
 

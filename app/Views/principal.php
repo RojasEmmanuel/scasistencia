@@ -4,33 +4,38 @@
 <div class="contenidoPagina">
     <?php if (session()->has('message')): ?>
         <div class="alert alert-success">
+            <span class="icon">✔️</span>
             <?= session('message') ?>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">✖️</button>
         </div>
     <?php endif; ?>
 
     <?php if (session()->has('error')): ?>
         <div class="alert alert-danger">
+            <span class="icon">❌</span>
             <?= session('error') ?>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">✖️</button>
         </div>
     <?php endif; ?>
 
     <?php if (session()->has('errors')): ?>
         <div class="alert alert-danger">
+            <span class="icon">❌</span>
             <?php foreach (session('errors') as $error): ?>
                 <p><?= $error ?></p>
             <?php endforeach; ?>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">✖️</button>
         </div>
     <?php endif; ?>
 
     <div class="seccion-superior">
-        <h1 class="saludo">Bienvenido al Panel de Administración 🚀</h1>
+        <h1 class="saludo">Bienvenido de nuevo Emmanuel! 🚀</h1>
         <p class="descripcion">Aquí podrás consultar y administrar información sobre los eventos realizados en el Instituto Tecnológico de Pochutla.</p>
     
         <div class="detalles">
 
             <ul class="lista-herramientas">
-                <li>✅ Registra un evento académico, social o cultural.</li>
-                <li>✅ Notifica a la comunidad estudiantil.</li>
+                <li>✅ Registra un evento académico, civico, cultural o deportivo.</li>
                 <li>✅ Comparte el enlace de registro a los docentes.</li>
                 <li>✅ Consulta, analiza y exporta los datos registrados.</li>
             </ul>
